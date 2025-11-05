@@ -7,6 +7,7 @@
 * สามารถเข้าถึงเรียกใช้ได้บน cloud host โดยตรงที่ https://frontend-drone-api-server.onrender.com/
   
 (ถ้าจะเพิ่มTemperature Log ให้รอจนกด Submit แล้วขึ้น✅ Log created successfully!)
+
 ---
 
 ## ✨ Features
