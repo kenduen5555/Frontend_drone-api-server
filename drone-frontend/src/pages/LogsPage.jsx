@@ -28,7 +28,7 @@ const LogsPage = () => {
 
   return (
 <div className="bg-white shadow-md p-6 rounded-lg w-full max-w-5xl mx-auto">
-  <Header title="Page #3" title1="View Logs" />
+  <Header title="Page #3  (12 per page)" title1="View Logs" />
   <div className="overflow-x-auto">
     <table className="w-full max-w-full border border-gray-300 text-sm">
       <thead className="bg-purple-600 text-white uppercase text-xs">
