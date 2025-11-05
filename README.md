@@ -26,6 +26,7 @@
 
 ### 1. Clone repo มาในเครื่อง:
 git clone https://github.com/kenduen5555/Frontend_drone-api-server.git
+
 cd Frontend_drone-api-server/drone-frontend
 
 ### 2.ติดตั้ง dependencies:
