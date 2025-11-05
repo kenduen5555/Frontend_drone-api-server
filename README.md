@@ -55,7 +55,6 @@ Environment Variables: ตั้งตามด้านบน
 ## 🌐 Pages & Components
 | Component | Description |
 |------|-------------|
-
 | ConfigPage.jsx | แสดงค่า Config ของโดรน |
 | LogFormPage.jsx |	ฟอร์มกรอก Temperature |
 | LogsPage.jsx | แสดง Logs ของโดรน พร้อม Pagination |
