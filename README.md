@@ -29,8 +29,12 @@ git clone https://github.com/kenduen5555/Frontend_drone-api-server.git
 
 cd Frontend_drone-api-server/drone-frontend
 
+
+
 ### 2.ติดตั้ง dependencies:
 npm install
+
+
 
 ### 3.การตั้งค่า Environment Variables
 สร้างไฟล์ .env ในโฟลเดอร์ drone-frontend และเพิ่มค่า:
@@ -40,6 +44,8 @@ VITE_API_BASE_URL=https://projectweb3-1-drone-api-server.onrender.com
 VITE_DRONE_ID=66011441
 
 ค่าของ VITE_DRONE_ID ต้องตรงกับโดรนที่ต้องการดูค่า logs และ config
+
+
 
 ### 4.การรันในโหมด Development
 npm run dev
