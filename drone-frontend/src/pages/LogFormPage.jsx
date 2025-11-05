@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import Header from "./Header"; 
 const LogFormPage = () => {
   const [temp, setTemp] = useState("");
   const [config, setConfig] = useState(null);
@@ -39,25 +39,22 @@ const LogFormPage = () => {
   };
 
   return (
-    <div className="bg-white shadow-md p-6 rounded-lg">
-      <h1 className="text-2xl font-bold mb-4">Temperature Log Form</h1>
-
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          type="number"
-          placeholder="Temperature (°C)"
-          className="border p-2 rounded w-full"
-          value={temp}
-          onChange={(e) => setTemp(e.target.value)}
-          required
-        />
-        <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-          Submit
-        </button>
-      </form>
-
-      {message && <p className="mt-4 text-center">{message}</p>}
-    </div>
+<div className="bg-white shadow-md p-6 rounded-lg w-full max-w-5xl mx-auto">
+  <Header title="Page #2" title1="Temperature Log Form" />  
+  <h1 className="text-2xl font-bold mb-4 text-center text-green-600">Temperature Log</h1>
+  <form onSubmit={handleSubmit} className="space-y-4">
+    <input
+      type="number"
+      placeholder="Temperature (°C)"
+      className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+      value={temp}
+      onChange={(e) => setTemp(e.target.value)}
+      required
+    />
+    <button className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition duration-200">Submit</button>
+  </form>
+  {message && <p className="mt-4 text-center text-sm text-gray-700">{message}</p>}
+</div>
   );
 };
 

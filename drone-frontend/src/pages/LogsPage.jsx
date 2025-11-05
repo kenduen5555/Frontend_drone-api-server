@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import Header from "./Header"; 
 const LogsPage = () => {
   const [logs, setLogs] = useState([]);
   const [page, setPage] = useState(1);
@@ -27,65 +27,69 @@ const LogsPage = () => {
   const handleNext = () => setPage((p) => Math.min(p + 1, totalPages));
 
   return (
-    <div className="bg-white shadow-md p-6 rounded-lg">
-      <h1 className="text-2xl font-bold mb-4">View Logs</h1>
-
-      <table className="w-full border-collapse border text-sm">
-        <thead className="bg-blue-600 text-white">
-          <tr>
-            <th className="border p-2">Created</th>
-            <th className="border p-2">Country</th>
-            <th className="border p-2">Drone ID</th>
-            <th className="border p-2">Drone Name</th>
-            <th className="border p-2">Celsius</th>
-          </tr>
-        </thead>
-        <tbody>
-          {logs.length > 0 ? (
-            logs.map((log, i) => (
-              <tr key={i} className="text-center hover:bg-gray-50">
-                <td className="border p-2">{log.created}</td>
-                <td className="border p-2">{log.country}</td>
-                <td className="border p-2">{log.drone_id}</td>
-                <td className="border p-2">{log.drone_name}</td>
-                <td className="border p-2">{log.celsius}</td>
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="5" className="border p-2 text-center">No logs found</td>
+<div className="bg-white shadow-md p-6 rounded-lg w-full max-w-5xl mx-auto">
+  <Header title="Page #3" title1="View Logs" />
+  <div className="overflow-x-auto">
+    <table className="w-full max-w-full border border-gray-300 text-sm">
+      <thead className="bg-purple-600 text-white uppercase text-xs">
+        <tr>
+          <th className="border p-2">Created</th>
+          <th className="border p-2">Country</th>
+          <th className="border p-2">Drone ID</th>
+          <th className="border p-2">Drone Name</th>
+          <th className="border p-2">Celsius</th>
+        </tr>
+      </thead>
+      <tbody>
+        {logs.length > 0 ? (
+          logs.map((log, i) => (
+            <tr key={i} className="text-center hover:bg-gray-50 transition-colors duration-200">
+              <td className="border p-2">{new Date(log.created).toLocaleString()}</td>
+              <td className="border p-2">{log.country}</td>
+              <td className="border p-2">{log.drone_id}</td>
+              <td className="border p-2">{log.drone_name}</td>
+              <td className="border p-2">{log.celsius}°C</td>
             </tr>
-          )}
-        </tbody>
-      </table>
+          ))
+        ) : (
+          <tr>
+            <td colSpan="5" className="border p-4 text-center text-gray-400">
+              No logs found
+            </td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+  </div>
 
-      {/* ✅ Pagination Controls */}
-      <div className="flex justify-between items-center mt-4">
-        <button
-          onClick={handlePrev}
-          disabled={page === 1}
-          className={`px-3 py-1 rounded ${
-            page === 1 ? "bg-gray-300 cursor-not-allowed" : "bg-blue-600 text-white hover:bg-blue-700"
-          }`}
-        >
-          Prev
-        </button>
+  {/* Pagination */}
+  <div className="flex justify-between items-center mt-6">
+    <button
+      onClick={handlePrev}
+      disabled={page === 1}
+      className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+        page === 1 ? "bg-gray-300 cursor-not-allowed" : "bg-purple-600 text-white hover:bg-purple-700"
+      }`}
+    >
+      Prev
+    </button>
 
-        <span className="text-sm text-gray-600">
-          Page {page} of {totalPages}
-        </span>
+    <span className="text-sm text-gray-600 font-medium">
+      Page {page} of {totalPages}
+    </span>
 
-        <button
-          onClick={handleNext}
-          disabled={page === totalPages}
-          className={`px-3 py-1 rounded ${
-            page === totalPages ? "bg-gray-300 cursor-not-allowed" : "bg-blue-600 text-white hover:bg-blue-700"
-          }`}
-        >
-          Next
-        </button>
-      </div>
-    </div>
+    <button
+      onClick={handleNext}
+      disabled={page === totalPages}
+      className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+        page === totalPages ? "bg-gray-300 cursor-not-allowed" : "bg-purple-600 text-white hover:bg-purple-700"
+      }`}
+    >
+      Next
+    </button>
+  </div>
+</div>
+
   );
 };
 
