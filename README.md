@@ -6,11 +6,6 @@
 
 สามารถเข้าถึงเรียกใช้ได้บน cloud host โดยตรงที่ https://frontend-drone-api-server.onrender.com/
 
-โดยมีฟังก์ชันหลักดังนี้:  
-- แสดงค่า **Config ของโดรน**  
-- กรอกค่า **Temperature Log** ผ่านฟอร์ม  
-- ดู **Logs ของโดรน** พร้อมระบบ **Pagination**  
-
 ---
 
 ## ✨ Features
