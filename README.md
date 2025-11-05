@@ -4,7 +4,7 @@
 โปรเจกต์นี้เป็น **Frontend ของ drone-api-server**  
 พัฒนาด้วย **React + Vite + TailwindCSS**  
 
-สามารถเข้าถึงเรียกใช้ได้บน cloud host โดยตรงที่ https://frontend-drone-api-server.onrender.com/
+* สามารถเข้าถึงเรียกใช้ได้บน cloud host โดยตรงที่ https://frontend-drone-api-server.onrender.com/
 
 ---
 
